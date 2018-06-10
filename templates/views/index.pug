@@ -1,0 +1,56 @@
+extends ../layouts/default
+
+block content
+	.container
+		.row.title-wrap
+			h1(role='button').text-center My Closet
+
+		.row.menu
+			.col-md-3
+				button(val="spring").btn.btn-warning.text-center.season
+					h5 Spring
+			.col-md-3
+				button(val="summer").btn.btn-danger.text-center.season
+					h5 Summer
+			.col-md-3
+				button(val="autumn").btn.btn-success.text-center.season
+					h5 Autumn
+			.col-md-3
+				button(val="winter").btn.btn-info.text-center.season
+					h5 Winter
+
+		each cat in categories
+			h2 #{cat.名前}
+			.row.row-eq-height
+				each item in items
+					if item.カテゴリ.catId == cat.catId
+						.item.col-md-3
+							.item-contents.panel.panel-default
+								.img-frame
+									if item.画像
+										img(src=`${item.画像}` data-toggle="modal" data-target="#basicModal").photo
+									else
+										img(src="http://haginoryokkou.com/wp-content/uploads/2016/09/noimage.png")
+								a(href=`/keystone/items/${item._id}`)
+									p: strong #{item.名前}
+									- var date = new Date(item.登録日);
+									- var timeString = `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+									if item.柄
+										p 柄：#{item.柄}
+									p カラー：#{item.カラー}
+									p ショップ：#{item.ショップ}
+									p 季節：
+										if item.春
+											span.spring 春
+										if item.夏
+											span.summer 夏
+										if item.秋
+											span.autumn 秋
+										if item.冬
+											span.winter 冬
+									p 登録日：#{timeString}
+
+		#basicModal.modal.fade
+			.modal-dialog
+				.modal-content
+					img(src="#")#modal-image

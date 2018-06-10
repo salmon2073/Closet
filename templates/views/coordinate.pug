@@ -1,0 +1,12 @@
+extends ../layouts/default
+
+block content
+    .container
+        .row.title-wrap
+            h1(role='button').text-center My Closet
+            .row
+                .item.col-md-2.col-md-offset-5
+                    each item in items
+                        if item
+                            p #{item.カテゴリ.名前}
+                            img(src=`${item.画像}`)

@@ -1,0 +1,70 @@
+body {
+	background-color: #622d18;
+	background-image: url('http://4.bp.blogspot.com/-UB6LgUu3Bic/T13eDlLyqOI/AAAAAAAAFYE/biSFmbxlmn0/s640/post-img_2012-03_g-01.jpg');
+	background-attachment: fixed;
+}
+
+h1,h2 {
+	color: #622d18;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+	font-weight: 500;
+}
+
+.title-wrap {
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+}
+
+.season {
+	width: 100%;
+}
+
+.season:focus {
+	outline: 0 !important;
+}
+
+.row-eq-height {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.out {
+	display: none;
+}
+
+.item-contents {
+	padding: 20px;
+}
+
+.img-frame {
+    border: 1px dotted #999;
+	margin-bottom: 1rem;
+}
+
+.img {
+    display: block;
+    height: 0;
+    width: 100%;
+	padding-bottom: 80%;
+}
+
+img {
+	width: 100%;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+.modal-dialog {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: 100%;
+	margin: auto;
+	pointer-events: none;
+}
+
+.modal-content {
+	pointer-events: all;
+}
